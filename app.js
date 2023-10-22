@@ -56,8 +56,6 @@ app.use(healthCenterRoutes);
 app.use(questionRoutes);
 /// Patient User Routes
 app.use(mainPatientRoutes);
-/// Employer Routes
-app.use(mainEmployerRoutes);
 
 //──── Error Handler Middleware
 app.use(errorHandler);
