@@ -17,9 +17,6 @@ const questionRoutes = require("./routes/questionRoutes");
 //Routes _Patient
 const mainPatientRoutes = require("./routes/patient/mainPatientRoutes");
 
-//Routes _Employer
-const mainEmployerRoutes = require("./routes/employer/mainEmployerRoutes");
-
 const { errorHandler } = require('./middlewares/errors');
 const {initialSeeder} = require('./seeders/initialSeeder');
 
