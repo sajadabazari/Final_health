@@ -8,7 +8,7 @@ const HealthCenter = require("../models/HealthCenter");
 const initialSeeder = async () => {
 let a = 0;
 
-/*   Province.find().then(async (provinces) => {
+   Province.find().then(async (provinces) => {
     if (provinces.length == 0) {
       provincesJson.forEach(async (val) => {
         let province = await Province.create({
@@ -24,7 +24,7 @@ let a = 0;
       });
     }
   });
- */
+ 
 };
 
 module.exports = { initialSeeder };
