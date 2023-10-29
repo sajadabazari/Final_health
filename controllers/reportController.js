@@ -51,7 +51,7 @@ const reportAllInfo = async (req, res, next) => {
   try {
     res.render("panel/report", { users }, async (err, data) => {
       const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium'
+        executablePath: '/usr/bin/chromium',
       })
       const page = await browser.newPage();
       await page.setContent(data, {
@@ -442,7 +442,7 @@ const getReport = async (req, res, next) => {
     }); */
     res.render("panel/report", { patients, mToJalali }, async (err, data) => {
       const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium'
+        executablePath: '/usr/bin/chromium',
         args: ["--force-color-profile=srgb"],
       });
       const page = await browser.newPage();
@@ -1062,7 +1062,7 @@ const getReportPatient = async (req, res, next) => {
       { patients, mToJalali },
       async (err, data) => {
       const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium'
+        executablePath: '/usr/bin/chromium',
         args: ["--force-color-profile=srgb"],
       });
         const page = await browser.newPage();
