@@ -421,7 +421,6 @@ const getReport = async (req, res, next) => {
       });
 
       let patientss = await Patient.aggregate(_pipeline);
-      console.log('ddsdsdsd',patientss)
 
       patients = await Patient.populate(patientss, {
         path: "user",
@@ -440,6 +439,8 @@ const getReport = async (req, res, next) => {
       user = p;
       patients[key].user = user;
     }); */
+          console.log('ddsdsdsd',patients)
+
     res.render("panel/report", { patients, mToJalali }, async (err, data) => {
       const browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium',
