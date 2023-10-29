@@ -84,6 +84,7 @@ const reportAllInfo = async (req, res, next) => {
 };
 
 const getReport = async (req, res, next) => {
+  console.log('ssss');
   try {
     let reportFrom = jalaliToM(req.body.reportFrom);
     let reportTo = jalaliToM(req.body.reportTo);
