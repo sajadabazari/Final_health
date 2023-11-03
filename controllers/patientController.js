@@ -1035,9 +1035,29 @@ const checkVaccineDoseExist = async (req, res, next) => {
     next(err);
   }
 };
+const complete_info = async (req, res, next) => {
+  try{
+    const id = mongoose.Types.ObjectId(req.params._id);
+    const user = await User.findById(id);
+    if(!user.patientProfileStatus){
+      const provinces = await Province.find();
+      res.render('panel/complete_info', {
+          user,
+          provinces,
+          login: req.session.user,
+      });
+    }else{
+      res.redirect('/panel/patients')
+    }
+  }catch(err){
+    next(err)
+  }
+
+};
 module.exports = {
   edit,
   update,
+  complete_info,
   patients,
   set_history,
   create,
