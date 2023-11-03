@@ -27,6 +27,7 @@ router.get('/panel/patient/insert',isAuth(true), checkAccess('ptnRegister'), pat
 router.get('/panel/patient/create', isAuth(true), checkAccess('ptnRegister'),patientController.create);
 router.get('/panel/patient/edit/:_id',isAuth(true), checkAccess('ptnRegister'), patientController.edit);
 router.post('/panel/patient/create', isAuth(true), checkAccess('ptnRegister'),patientController.regPatient);
+router.get('/panel/patient/complete_info/:_id', isAuth(true), checkAccess('ptnRegister'),patientController.complete_info);
 router.get('/panel/patient/search/:input?',isAuth(), patientController.search);
 router.post('/panel/patient/find',isAuth(true),patientController.findPatient);
 router.post('/panel/patient/checkVaccineDoseExist', patientController.checkVaccineDoseExist);
