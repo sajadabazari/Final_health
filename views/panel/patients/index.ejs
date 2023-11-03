@@ -354,19 +354,18 @@
                                   style="width: 20%; padding-right: 4px"
                                 >
                                   <div class="btn-group align-top">
-                                    <%if(login.accessibility.deletePatient || login.isAdmin){%>
+                                    <%if(login.accessibility.deletePatient || login.isAdmin ){%>
                                     <a
                                       href="#"
                                       class="btn btn-sm btn-danger deletePatient"
                                       data-target="#user-form-modal"
                                       data-bs-toggle=""
                                       type="button"
-                                      user-id="<%=patient.patient._id%>"
-                                    >
+                                      user-id="<%=patient._id%>">
                                       <i class="fa fa-trash"></i>
                                     </a>
                                     <%}%>
-                                    <%if(login.accessibility.ptnRegister || login.isAdmin){%>
+                                    <%if((login.accessibility.ptnRegister || login.isAdmin) && patient.patientProfileStatus){%>
                                     <a
                                       href="<%=process.env.SITEURL%>/panel/patient/edit/<%=patient.patient._id%>"
                                       class="btn btn-sm btn-secondary badge"
@@ -376,7 +375,7 @@
                                       >ویرایش</a
                                     >
                                     <%}%>
-                                    <%if(login.accessibility.ptnSideEffect  || login.isAdmin){%>
+                                    <%if((login.accessibility.ptnSideEffect  || login.isAdmin) && patient.patientProfileStatus){%>
                                     <a
                                       href="<%=process.env.SITEURL%>/panel/patient/e_crfs/<%=patient.patient._id%>"
                                       class="btn btn-sm btn-primary badge"
@@ -386,7 +385,17 @@
                                       >عوارض واکسن</a
                                     >
                                     <%}%>
-                                    <%if(login.accessibility.editHistory || login.isAdmin){%>
+                                    <%if((login.accessibility.ptnRegister  || login.isAdmin) && patient.patientProfileStatus == false){%>
+                                    <a
+                                      href="<%=process.env.SITEURL%>/panel/patient/complete_info/<%=patient._id%>"
+                                      class="btn btn-sm btn-success badge w-75"
+                                      data-target="#user-form-modal"
+                                      data-bs-toggle=""
+                                      type="button"
+                                      >تکمیل پروفایل</a
+                                    >
+                                    <%}%>
+                                    <%if((login.accessibility.editHistory || login.isAdmin) && patient.patientProfileStatus ){%>
                                     <a
                                       class="btn btn-sm btn-warning badge _pHistory"
                                       href="#input-modal"
